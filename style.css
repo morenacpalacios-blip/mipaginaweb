@@ -123,14 +123,10 @@ body {
 }
 
 .hero-banner {
-    background: linear-gradient(90deg, rgba(11,14,17,0.95) 30%, rgba(11,14,17,0.4)), 
+    background: linear-gradient(90deg, rgba(11, 14, 17, 0.95) 30%, rgba(11, 14, 17, 0.4)), 
                 url('xtremegym.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: 14px;
-    padding: 3rem 2.5rem;
-    border: 1px solid var(--border-color);
-    margin-bottom: 2rem;
 }
 
 .tag {
