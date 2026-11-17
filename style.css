@@ -337,37 +337,32 @@ body {
     font-size: 1.2rem;
 }
 
-/* Diseño texto + imagen en el resto de páginas */
-.contenido-con-imagen {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+/* Fondo con logo difuminado para Beneficios, Filosofía, Clases y Contacto */
+.main-content.fondo-logo {
+    position: relative;
+    z-index: 1;
 }
 
-.texto-bloque {
-    flex: 1.2;
+.main-content.fondo-logo::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 250px; /* Coincide exacto con el ancho de tu .sidebar */
+    right: 0;
+    bottom: 0;
+    background-image: url("Xtreme gym.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 65%;
+    filter: blur(8px);
+    opacity: 0.22;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.imagen-bloque {
-    flex: 0.8;
-}
-
-.imagen-bloque img {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #1f2924;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-}
-
-/* Para pantallas chicas o celulares */
-@media (max-width: 900px) {
-    .contenido-con-imagen {
-        flex-direction: column;
-    }
-    .imagen-bloque {
-        width: 100%;
+@media (max-width: 768px) {
+    .main-content.fondo-logo::before {
+        left: 0;
+        background-size: 85%;
     }
 }
