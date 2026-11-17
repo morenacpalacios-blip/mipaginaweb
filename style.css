@@ -353,7 +353,7 @@ body {
     background-image: url("Xtreme gym.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; 
+    background-size: 165%; 
     filter: blur(8px);
     opacity: 0.22;
     z-index: -1;
@@ -363,6 +363,6 @@ body {
 @media (max-width: 768px) {
     .main-content.fondo-logo::before {
         left: 0;
-        background-size: cover;
+        background-size: 180%;
     }
 }
