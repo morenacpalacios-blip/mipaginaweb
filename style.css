@@ -347,13 +347,13 @@ body {
     content: "";
     position: fixed;
     top: 0;
-    left: 250px; /* Coincide exacto con el ancho de tu .sidebar */
+    left: 250px;
     right: 0;
     bottom: 0;
     background-image: url("Xtreme gym.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 65%;
+    background-size: cover; 
     filter: blur(8px);
     opacity: 0.22;
     z-index: -1;
@@ -363,6 +363,6 @@ body {
 @media (max-width: 768px) {
     .main-content.fondo-logo::before {
         left: 0;
-        background-size: 85%;
+        background-size: cover;
     }
 }
