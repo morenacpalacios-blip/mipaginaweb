@@ -301,6 +301,7 @@ body {
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
 }
+
 /* Sección extra en Inicio */
 .inicio-extra {
     margin-top: 35px;
@@ -322,19 +323,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 25px;
-}
-
-.card-info {
-    background-color: #141918;
-    border-left: 4px solid #00e640;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.card-info h3 {
-    color: #00e640;
-    margin-bottom: 8px;
-    font-size: 1.2rem;
 }
 
 /* Fondo con logo difuminado para Beneficios, Filosofía, Clases y Contacto */
@@ -366,6 +354,7 @@ body {
         background-size: 180%;
     }
 }
+
 .tabla-xg {
     width: 100%;
     border-collapse: collapse;
@@ -394,6 +383,7 @@ body {
 .tabla-xg tr:hover {
     background-color: rgba(0, 255, 102, 0.05);
 }
+
 /* Footer en Contacto */
 .dev-footer {
     margin-top: 40px;
@@ -414,7 +404,8 @@ body {
     margin-top: 5px;
     opacity: 0.8;
 }
-/* Animación de entrada para que la página cobre vida al abrirse */
+
+/* Animación de entrada general */
 @keyframes aparecerArriba {
     from {
         opacity: 0;
@@ -430,60 +421,55 @@ body {
     animation: aparecerArriba 0.5s ease-out;
 }
 
-/* Tarjetas interactivas con efecto 3D en las letras y contraste visual */
+/* Animación de fluctuación sutil automática para dar vida sin confundir con botones */
+@keyframes fluctuacionSuave {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Tarjetas informativas con fluctuación sutil automática y sin zoom de clic */
 .card-info {
     background: linear-gradient(145deg, #161b20 0%, #0f1316 100%);
     border-left: 4px solid var(--neon-green);
-    border-top: 1px solid #262e36;
-    border-right: 1px solid #262e36;
-    border-bottom: 1px solid #262e36;
+    border-top: 1px solid #2d3640;
+    border-right: 1px solid #2d3640;
+    border-bottom: 1px solid #2d3640;
     padding: 22px;
     border-radius: 12px;
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), 
-                box-shadow 0.3s ease, 
-                background 0.3s ease,
-                border-color 0.3s ease;
+    animation: fluctuacionSuave 6s ease-in-out infinite;
     cursor: default;
     position: relative;
     overflow: hidden;
 }
 
-.card-info:hover {
-    transform: translateY(-7px) scale(1.03);
-    background: linear-gradient(145deg, #1c2823 0%, #111915 100%);
-    border-color: var(--neon-green);
-    box-shadow: 0 12px 28px rgba(0, 255, 102, 0.28), 
-                inset 0 0 14px rgba(0, 255, 102, 0.1);
+/* Desfasar el tiempo de animación de las tarjetas para que no se muevan todas juntas al mismo tiempo */
+.cards-resumen .card-info:nth-child(2) {
+    animation-delay: 1.5s;
 }
 
-/* Movimiento independiente de las letras (efecto profundidad sobre la tarjeta) */
+.cards-resumen .card-info:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.cards-resumen .card-info:nth-child(4) {
+    animation-delay: 4.5s;
+}
+
 .card-info h3 {
-    color: #ffffff; /* Blanco puro en reposo para variar de tanto verde */
+    color: #ffffff;
     margin-bottom: 8px;
     font-size: 1.15rem;
-    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), 
-                color 0.3s ease, 
-                text-shadow 0.3s ease;
 }
 
 .card-info p {
     color: #a8b2bd;
-    transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), 
-                color 0.3s ease;
 }
 
-.card-info:hover h3 {
-    transform: translateY(-4px) translateX(4px);
-    color: var(--neon-green);
-    text-shadow: 0 4px 12px rgba(0, 255, 102, 0.65);
-}
-
-.card-info:hover p {
-    transform: translateY(-2px) translateX(3px);
-    color: #ffffff;
-}
-
-/* Diseño distinto para la sección de Pases (contraste gris acero + neón) */
+/* Tarjetas de Pase con marco estructurado en gris acero */
 .card-pase {
     background: linear-gradient(160deg, #1c2229 0%, #101419 100%);
     border: 1px solid #2d3640;
@@ -493,35 +479,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
-}
-
-.card-pase:hover {
-    transform: translateY(-8px) scale(1.03);
-    border-color: var(--neon-green);
-    border-top-color: var(--neon-green);
-    background: linear-gradient(160deg, #1b2c24 0%, #101714 100%);
-    box-shadow: 0 14px 32px rgba(0, 255, 102, 0.32);
-}
-
-/* Movimiento de letras en las tarjetas de Pase */
-.card-pase h3, .card-pase p, .badge-pase, .pase-footer {
-    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
-}
-
-.card-pase:hover h3 {
-    transform: translateY(-4px) translateX(3px);
-    color: var(--neon-green);
-}
-
-.card-pase:hover p {
-    transform: translateY(-2px) translateX(3px);
-    color: #ffffff;
-}
-
-.card-pase:hover .pase-footer {
-    transform: translateX(6px);
 }
 
 .card-pase.destacado {
@@ -572,7 +530,7 @@ body {
     padding-top: 12px;
 }
 
-/* Barra de estadísticas con contraste gris metálico y números blancos/neón */
+/* Barra de estadísticas con diseño metálico y sin transformaciones agresivas */
 .stats-bar {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -586,13 +544,6 @@ body {
     border-radius: 10px;
     padding: 16px;
     text-align: center;
-    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-}
-
-.stat-item:hover {
-    transform: translateY(-5px) scale(1.04);
-    border-color: var(--neon-green);
-    box-shadow: 0 8px 20px rgba(0, 255, 102, 0.2);
 }
 
 .stat-num {
@@ -601,12 +552,6 @@ body {
     font-weight: 900;
     color: #ffffff;
     line-height: 1.1;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.stat-item:hover .stat-num {
-    transform: translateY(-3px) scale(1.08);
-    color: var(--neon-green)
 }
 
 .stat-label {
