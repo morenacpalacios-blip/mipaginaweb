@@ -394,3 +394,23 @@ body {
 .tabla-xg tr:hover {
     background-color: rgba(0, 255, 102, 0.05);
 }
+/* Footer en Contacto */
+.dev-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+.dev-footer strong {
+    color: var(--neon-green);
+    font-weight: 800;
+}
+
+.dev-footer .dev-sub {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    opacity: 0.8;
+}
