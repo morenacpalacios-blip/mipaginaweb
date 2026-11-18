@@ -448,15 +448,15 @@ body {
 
 /* Desfasar el tiempo de animación de las tarjetas para que no se muevan todas juntas al mismo tiempo */
 .cards-resumen .card-info:nth-child(2) {
-    animation-delay: 0.8s;
+    animation-delay: 0.4s;
 }
 
 .cards-resumen .card-info:nth-child(3) {
-    animation-delay: 1.6s;
+    animation-delay: 1s;
 }
 
 .cards-resumen .card-info:nth-child(4) {
-    animation-delay: 2.4s;
+    animation-delay: 1.4s;
 }
 
 .card-info h3 {
