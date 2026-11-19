@@ -544,7 +544,7 @@ body {
     border-radius: 10px;
     padding: 16px;
     text-align: center;
-    box-shadow: 0 0 18px rgba(130, 148, 170, 0.35), 0 6px 16px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 18px rgba(130, 148, 170, 0.55);
 }
 
 .stat-num {
