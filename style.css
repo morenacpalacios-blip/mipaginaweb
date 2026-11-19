@@ -230,15 +230,16 @@ body {
 }
 
 .banner-cta {
-    background: linear-gradient(135deg, #12291d 0%, var(--bg-card) 100%);
-    border: 1px solid var(--neon-green);
+    background: linear-gradient(135deg, #1b2128 0%, #101419 100%);
+    border: 1px solid #4a5564;
+    box-shadow: 0 0 18px rgba(130, 148, 170, 0.35);
     padding: 1.8rem;
     border-radius: 12px;
 }
 
 .banner-cta h2 {
     font-size: 1.3rem;
-    color: var(--neon-green);
+    color: var(--text-white);
     margin-bottom: 0.5rem;
 }
 
